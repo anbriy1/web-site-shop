@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "TTR";
+    src: url('TT\ Commons\ Regular.otf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+@font-face { 
+    font-family: "TTB";
+    scr: url('./TT\ Commons\ Bold.otf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+
+}

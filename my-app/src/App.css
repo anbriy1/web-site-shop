@@ -1,0 +1,88 @@
+@import './font/font.css';
+
+.App {
+  
+}
+.full-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -400px;
+  min-height: 100vh;
+  user-select: none;
+}
+
+
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 121px;
+  height: 113px;
+}
+
+.text {
+  width: 458;
+  font-family: 'TTB';
+  font-style: normal;
+  font-weight: 1100;
+  font-size: 80px;
+  line-height: 110px;
+  color: #F45656;
+  margin: 0;
+}
+
+.pear{
+    margin-top: 350px;
+font-family: 'TTR';
+font-style: normal;
+position: absolute;
+font-weight: 400;
+
+color: rgb(56, 56, 56);
+letter-spacing: 13px;
+
+}
+
+.pear1{
+  padding-bottom: 90px;
+  font-size: 110px;
+  font-family: 'TTR';
+ font-weight: 500;
+}
+
+.image-rowing{
+  display: flex;
+  gap: 25px; 
+  justify-content: center;
+  margin-top: -240px; 
+  padding: 0 20px; 
+}
+
+.katalog{
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'TTR';
+  font-size: 120px;
+  font-weight: 400;
+  font-size: 60px;
+  width: 785.42px;
+  height: 172.48px;
+  border-radius: 60px;
+  border:none;
+  background-color:#F45656;
+  color: #ffffff;
+}
+.kat{
+  text-decoration: none;
+}
+
+
+
+

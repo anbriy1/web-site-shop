@@ -5,6 +5,16 @@ import '../App.css';
 
 function Header() {
   const location = useLocation();
+  
+
+  const isActive = (path) => {
+   
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+
+    return location.pathname.startsWith(path);
+  };
 
   return (
     <header className='head'>
@@ -12,26 +22,26 @@ function Header() {
       
       <nav className='nav-links'>
         <Link 
-          to="/" 
-          className={location.pathname === '/' ? 'nav-btn active' : 'nav-btn'}
+          to="/catalog" 
+          className={isActive('/catalog') || isActive('/product') ? 'nav-btn active' : 'nav-btn'}
         >
-          главная
+          каталог
         </Link>
         <Link 
           to="/components" 
-          className={location.pathname === '/components' ? 'nav-btn active' : 'nav-btn'}
+          className={isActive('/components') ? 'nav-btn active' : 'nav-btn'}
         >
           комплектующие
         </Link>
         <Link 
           to="/builds" 
-          className={location.pathname === '/builds' ? 'nav-btn active' : 'nav-btn'}
+          className={isActive('/builds') ? 'nav-btn active' : 'nav-btn'}
         >
           готовые сборки
         </Link>
         <Link 
           to="/configurator" 
-          className={location.pathname === '/configurator' ? 'nav-btn active' : 'nav-btn'}
+          className={isActive('/configurator') ? 'nav-btn active' : 'nav-btn'}
         >
           конфигуратор
         </Link>

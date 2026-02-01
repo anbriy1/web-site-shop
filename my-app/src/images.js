@@ -18,8 +18,18 @@ import nvidia from "./image/nvidia.png"
 import logitech from "./image/logitech.png"
 import benq from "./image/benq.png"
 import hyperx from "./image/hyperx.png"
+import myr from "./image/myr.png"
+import visa from "./image/visa.png"
+import coler from "./image/Coler.jpg"
+import mastercard from "./image/mastercard.png"
+import intel_5_12 from "./image/intel-i5-12f.webp"
 
-export default {
+const images = {
+    intel_5_12,
+    coler,
+    myr,
+    visa,
+    mastercard,
     hyperx,
     msi,
     nvidia,
@@ -40,3 +50,5 @@ export default {
     img11,
     img12
 };
+
+export default images;

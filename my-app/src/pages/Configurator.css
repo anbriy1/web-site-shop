@@ -1,0 +1,318 @@
+.configurator-page {
+  margin-left: 150px;
+  padding: 40px 20px;
+}
+
+.configurator-container {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+}
+
+.system-block {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 0;
+}
+
+.block-title {
+  font-family: 'TTR';
+  font-size: 36px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+.components-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.component-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FBFBFB;
+  border: 1px solid #D8D8D8;
+  border-radius: 10px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 650px;
+  height: 55px;
+}
+
+.component-item:hover {
+  border-color: #FF6B6B;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.component-add-btn {
+  width: 52px;
+  height: 52px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #B5B5B5;
+  flex-shrink: 0;
+  font-family: Arial, sans-serif;
+  font-weight: 200;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.component-item:hover .component-add-btn {
+  background: #FF6B6B;
+  color: #FFFFFF;
+}
+
+.component-name {
+  font-family: 'TTR';
+  font-size: 32px;
+  color: #000000;
+}
+
+.summary-icons-right {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  row-gap: 26px;
+  column-gap: 26px;
+}
+
+.icon-box {
+  margin-left: 15px;
+  width: 100px;
+  height: 100px;
+  background: #E8E8E8;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.info-block {
+  position: relative;
+  width: 580px;
+  height: 350px;
+  background: #F7F7F7;
+  border-radius: 60px;
+  margin-top: 55px;
+  margin-left: 40px; 
+}
+
+.buy-buttonor {
+  position: absolute;
+  right: 25px;
+  bottom: 30px;
+  width: 265px;
+  height: 115px;
+  background: #F45656;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+}
+
+.buy-text {
+  font-family: 'TT Commons', 'TTR', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 69px;
+  color: #FFFFFF;
+}
+
+.text-uper {
+  white-space: nowrap;
+  position: absolute;
+  bottom: 155px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'TT Commons';
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 46px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000;
+}
+
+.active-select{
+position: absolute;
+bottom: 35px;
+left: 111px;
+font-family: 'TT Commons';
+font-style: normal;
+font-weight: 300;
+font-size: 32px;
+line-height: 46px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #000000;
+}
+
+.active-price{
+box-sizing: border-box;
+position: absolute;
+bottom: 33px;
+left: 48px;
+width: 50px;
+border-radius: 50%;
+height: 50px;
+background: #E8E8E8;
+border: 1px solid #D7D7D7;
+}
+
+.full-price{
+position:absolute;
+left: 95px;
+bottom: 75px;
+
+font-family: 'TT Commons';
+font-style: normal;
+font-weight: 400;
+font-size: 42px;
+line-height: 69px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+
+}
+
+.Complete {
+  font-family: 'TT Commons';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 46px;
+  position: absolute;
+  bottom: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 90px;
+  background: #FFFFFF;
+  border: 1px solid #E1E1E1;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Complete-full {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%; 
+  border-radius: 60px;
+  z-index: 1;
+  transition: width 0.5s ease;
+}
+
+.Complete-text {
+  position: relative;
+  z-index: 10;
+  color: #000000;
+}
+
+.configurator-page .component-selected {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.configurator-page .component-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  padding: 5px;
+  flex-shrink: 0;
+}
+
+.configurator-page .component-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.configurator-page .component-name-small {
+  color: #999;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: 'TTR';
+}
+
+.configurator-page .component-model {
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'TTR';
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.configurator-page .component-price {
+  color: #22c55e;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'TT Commons';
+}
+
+
+.component-remove-btn {
+  position: absolute;
+  right: -20px;
+  bottom: 1px;
+  padding: 6px 18px;
+  background: #FF6B6B;
+  color: white;
+  border: none;
+  border-radius: 10px 0px 10px 0px;
+  font-family: 'TTR';
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 5;
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+.component-item {
+  position: relative;
+}
+
+.configurator-page .component-selected {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding-right: 90px; 
+}

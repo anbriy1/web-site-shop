@@ -24,6 +24,7 @@ import coler from "./image/Coler.jpg"
 import mastercard from "./image/mastercard.png"
 import intel_5_12 from "./image/intel-i5-12f.webp"
 
+
 const images = {
     intel_5_12,
     coler,

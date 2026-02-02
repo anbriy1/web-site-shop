@@ -39,11 +39,11 @@ export const products = [
     category: 'sale',
     description: 'Современная видеокарта NVIDIA GeForce RTX 4060 для игр в Full HD и 1440p с трассировкой лучей.',
     specs: {
-      memory: 'Тип памяти: GDDR6X',
-      interface: 'Видеоразъемы: DisplayPort x3, HDMI',
-      ports: 'Максимальное разрешение: Ultra HD 8K (7680x4320)',
-      cooling: 'Рекомендуемый блок питания: 750 Вт',
-      power: 'Интерфейс подключения PCI-E 4.0'
+      memory: ' GDDR6X',
+      interface: 'DisplayPort x3, HDMI',
+      ports: 'МUltra HD 8K (7680x4320)',
+      maks_p: '750 Вт',
+      interface_p: 'PCI-E 4.0'
     },
     review: {
       author: 'Пользователь',
@@ -310,11 +310,11 @@ export const components = [
     category: 'Видеокарты',
     description: 'Современная видеокарта NVIDIA GeForce RTX 3080 для игр в Ultra HD с трассировкой лучей.',
     specs: {
-      memory: 'Тип памяти: GDDR6X',
-      interface: 'Видеоразъемы: DisplayPort x3, HDMI',
-      ports: 'Максимальное разрешение: Ultra HD 8K (7680x4320)',
-      cooling: 'Рекомендуемый блок питания: 750 Вт',
-      power: 'Интерфейс подключения PCI-E 4.0'
+      memory: ' GDDR6X',
+      interface: 'DisplayPort x3, HDMI',
+      ports: 'МUltra HD 8K (7680x4320)',
+      maks_p: '750 Вт',
+      interface_p: 'PCI-E 4.0',
     },
     review: {
       author: 'Геймер2024',

@@ -316,3 +316,135 @@ color: #000000;
   position: relative;
   padding-right: 90px; 
 }
+
+
+.peripherals-section {
+  margin-top: 350px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.peripherals-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.peripherals-grid {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.peripheral-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 12px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 100px;
+}
+
+.peripheral-item:hover {
+  border-color: #22c55e;
+  background-color: transparent;
+}
+
+.peripheral-add-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #000000;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+  
+}
+
+.peripheral-item:hover .peripheral-add-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.peripheral-name {
+  font-size: 24px;
+  color: #6b7280;
+  text-align: center;
+  font-weight: 500;
+}
+
+.peripheral-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.peripheral-name-active {
+  font-size: 24px;
+  color: #22c55e;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.peripheral-remove-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  color: white;
+  border: 2px solid white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.peripheral-remove-btn:hover {
+  background-color: #dc2626;
+  transform: scale(1.1);
+}
+.peripheral-add-btn{
+  text-justify: center;
+}
+
+
+.peripheral-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.peripheral-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+
+.peripheral-remove-btn:hover {
+  background-color: #dc2626;
+  transform: scale(1.1);
+}

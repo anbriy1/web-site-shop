@@ -1,4 +1,5 @@
 @import './font/font.css';
+
 body, html {
   margin: 0;
   padding: 0;
@@ -103,8 +104,6 @@ letter-spacing: 13px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.45);
   transform: scale(1.02);
 }
-
-@import './font/font.css';
 
 .full {
     font-family: 'TTR';
@@ -400,7 +399,7 @@ main{
   text-align: center;
   font-family: 'TT Commons';
   font-style: normal;
-  font-size: 35px;
+  font-size: 38px;
   line-height: 64px;
   color: #000000;
   text-decoration: none;
@@ -895,4 +894,93 @@ main{
 
 .product-item{
   text-decoration: none;
+}
+
+.Trash {
+  position: absolute;
+  right: -20px;
+  top:200px;
+  z-index: 1000;
+}
+
+.cart-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.cart-icon {
+  width: 100px;
+  height: 70px;
+  background: #EDEDED;
+  border-radius: 60px 0px 0px 60px;
+  font-size: 36px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.cart-icon:hover {
+  transform: translateX(-20px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.buy-button {
+  font-family: 'TTR';
+  font-size: 18px;
+  padding: 18px 14px;
+  background: #F45656;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-weight: 400;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.buy-button:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.discount {
+  background-color: #F45656;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.product-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.product-item-wrapper .product-item {
+  text-decoration: none;
+}
+
+.product-item-wrapper .buy-button {
+  margin-top: 10px;
+}
+
+
+.cart-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

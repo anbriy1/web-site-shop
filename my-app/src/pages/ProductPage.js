@@ -1,13 +1,23 @@
-import React from 'react';
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../Product';
 import Header from '../components/Header';
 import Footer from '../components/footer';
+import { getSpecName } from '../utils/specNames';
+import { useCartCount } from '../hooks/useCartCount';
 import '../App.css';
 
 function ProductPage() {
   const { id } = useParams();
   const product = products.find(p => p.id === id);
+  const [, updateCartCount] = useCartCount();
+
+  const addToCart = () => {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+  };
 
   if (!product) {
     return (
@@ -27,7 +37,7 @@ function ProductPage() {
       <Header />
       <main className='product-detail-page'>
         <Link to="/catalog" className='back-link'>⇦ назад</Link>
-        
+
         <div className='product-detail-container'>
           <div className='product-detail-left'>
             <div className='product-main-image'>
@@ -45,29 +55,28 @@ function ProductPage() {
               </div>
             </div>
           </div>
-          
+
           <div className='product-detail-right'>
             <h1 className='product-detail-title'>{product.fname}</h1>
-            
+
             <div className='product-rating'>
               <span className='rating-stars'>★ {product.rating || '3.0'}</span>
               <span className='rating-count'>{product.reviews || '2 отзыва'}</span>
             </div>
-            
+
             <div className='product-short-specs'>
               {Object.entries(product.specs).slice(0, 5).map(([key, value]) => (
                 <div key={key}>
                   <strong>{getSpecName(key)}:</strong> {value};
                 </div>
               ))}
-              <a href="#specs" className='show-all-specs'>Все характеристики →</a>
+              <Link to={`/specifications/${id}`} className='show-all-specs'>Все характеристики →</Link>
             </div>
 
             <div className='product-bottom-section'>
               {product.review && (
                 <div className='popular-review-card'>
                   <h3 className='popular-review-title'>Популярный отзыв</h3>
-                  
                   <div className='review-header'>
                     <div className='review-avatar'></div>
                     <div className='review-meta'>
@@ -78,11 +87,9 @@ function ProductPage() {
                       <span className='review-likes'>❤️ {product.review.likes}</span>
                     </div>
                   </div>
-
                   <div className='review-content-block'>
                     <h4 className='review-subtitle'>Достоинства</h4>
                     <p className='review-text'>{product.review.advantages}</p>
-                   
                     <button className='review-expand-btn'>развернуть ▸</button>
                   </div>
                 </div>
@@ -98,78 +105,19 @@ function ProductPage() {
                   )}
                   <span className='product-new-price'>{product.price.toLocaleString('ru-RU')} ₽</span>
                 </div>
-                
-                <button className='buy-button'>В корзину</button>
-                
+                <button className='buy-button' onClick={addToCart}>В корзину</button>
                 <div className='product-actions'>
                   <button className='compare-btn'>сравнить</button>
                   <button className='favorite-btn'>в избранное</button>
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
-        
       </main>
       <Footer />
     </div>
   );
-}
-
-function getSpecName(key) {
-  const names = {
-    oc:'Операционная система',
-    cover: 'Корпус',
-    cpu: 'Процессор',
-    gpu: 'Видеокарта',
-    ram: 'Оперативная память',
-    storage: 'Накопитель',
-    psu: 'Блок питания',
-    cooling: 'Охлаждение',
-    memory: 'Тип памяти',
-    interface: 'Видеоразъемы',
-    ports: 'Максимальное разрешение',
-    maks_p:' Рекомендуемый блок питания',
-    power: 'Энергопотребление',
-    sensor: 'Сенсор',
-    buttons: 'Кнопки',
-    connection: 'Подключение',
-    battery: 'Батарея',
-    interface_p:'Интерфейс подключения',
-    weight: 'Вес',
-    driver: 'Драйвер',
-    frequency: 'Частотный диапазон',
-    microphone: 'Микрофон',
-    cable: 'Кабель',
-    capacity: 'Емкость',
-    type: 'Тип',
-    cas: 'CAS Latency',
-    voltage: 'Напряжение',
-    rgb: 'RGB подсветка',
-    switches: 'Переключатели',
-    backlight: 'Подсветка',
-    anticost: 'Анти-ост',
-    diagonal: 'Диагональ',
-    resolution: 'Разрешение',
-    panel: 'Матрица',
-    refresh: 'Частота обновления',
-    response: 'Время отклика',
-    surface: 'Поверхность',
-    size: 'Размер',
-    base: 'Основание',
-    cleaning: 'Чистка',
-    compatibility: 'Совместимость',
-    rpm: 'Скорость вращения',
-    cache: 'Кэш',
-    formfactor: 'Форм-фактор',
-    warranty: 'Гарантия',
-    certificate: 'Сертификат',
-    pfc: 'PFC',
-    cables: 'Кабели',
-    protection: 'Защита'
-  };
-  return names[key] || key;
 }
 
 export default ProductPage;

@@ -63,7 +63,7 @@
   align-items: center;
   padding: 30px 40px;
   border-bottom: 1px solid #f0f0f0;
-  transition: background 0.2s;
+  transition:  0.2s;
 }
 
 .component-select-page .product-item-select:hover {

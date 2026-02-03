@@ -7,7 +7,6 @@ import img5 from "./image/img4.png"
 import img6 from "./image/img5.png"
 import img7 from "./image/img6.png"
 import img8 from "./image/img7.png"
-///fix number of image
 import img9 from "./image/img9.png"
 import img10 from "./image/img10.png"
 import img11 from "./image/img11.png"
@@ -23,9 +22,10 @@ import visa from "./image/visa.png"
 import coler from "./image/Coler.jpg"
 import mastercard from "./image/mastercard.png"
 import intel_5_12 from "./image/intel-i5-12f.webp"
-
+import Trash from "./image/Trash.png"
 
 const images = {
+    Trash,
     intel_5_12,
     coler,
     myr,

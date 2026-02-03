@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import images from '../images';
 import '../App.css'; 
 
@@ -12,10 +10,9 @@ function Footer(){
         </div>
 
         <div className='footer-image'>
-         <img src={images.visa}/>
-         <img src={images.mastercard} />
-         <img src={images.myr}/>
-         <img/> 
+         <img src={images.visa} alt="Visa" />
+         <img src={images.mastercard} alt="Mastercard" />
+         <img src={images.myr} alt="МИР" />
         </div>
         </footer>
     )

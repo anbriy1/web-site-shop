@@ -27,7 +27,6 @@ export const products = [
     }
   },
 
-  ///fname-add to everyone product//
   {
     id: '2',
     name: 'Palit GeForce RTX 3080 GamingPro',
@@ -310,10 +309,10 @@ export const components = [
     category: 'Видеокарты',
     description: 'Современная видеокарта NVIDIA GeForce RTX 3080 для игр в Ultra HD с трассировкой лучей.',
     specs: {
-      memory: ' GDDR6X',
+      memory: 'GDDR6X',
       interface: 'DisplayPort x3, HDMI',
-      ports: 'МUltra HD 8K (7680x4320)',
-      maks_p: '750 Вт',
+      ports: 'Ultra HD 8K (7680x4320)',
+      maks: '750 Вт',
       interface_p: 'PCI-E 4.0',
     },
     review: {

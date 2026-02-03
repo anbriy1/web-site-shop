@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
-import Footer from '../components/footer';
 import './Configurator.css';
-import bliz from "../image/bliz.png"
-import puzzel from "../image/puzzel.png"
-import cards_g from "../image/cards_g.png"
-import mem from "../image/mem.png"
+import bliz from '../image/bliz.png';
+import puzzel from '../image/puzzel.png';
+import cards_g from '../image/cards_g.png';
+import mem from '../image/mem.png';
 
 function Configurator() {
   const navigate = useNavigate();
@@ -22,12 +21,12 @@ function Configurator() {
   });
 
   const [selectedPeripherals, setSelectedPeripherals] = useState({
-    monitor: false,
-    keyboard: false,
-    mouse: false,
-    headphones: false,
-    microphone: false,
-    mousepad: false
+    monitor: null,
+    keyboard: null,
+    mouse: null,
+    headphones: null,
+    microphone: null,
+    mousepad: null
   });
 
   const loadComponents = () => {
@@ -38,6 +37,16 @@ function Configurator() {
         setSelectedComponents(parsed);
       } catch (e) {
         console.error('Ошибка загрузки компонентов:', e);
+      }
+    }
+
+    const savedPeripherals = localStorage.getItem('selectedPeripherals');
+    if (savedPeripherals) {
+      try {
+        const parsed = JSON.parse(savedPeripherals);
+        setSelectedPeripherals(parsed);
+      } catch (e) {
+        console.error('Ошибка загрузки периферии:', e);
       }
     }
   };
@@ -91,6 +100,10 @@ function Configurator() {
     navigate(`/select/${id}`);
   };
 
+  const handlePeripheralClick = (id) => {
+    navigate(`/select/${id}`);
+  };
+
   const handleRemoveComponent = (id, event) => {
     event.stopPropagation();
     
@@ -101,26 +114,38 @@ function Configurator() {
     localStorage.setItem('selectedComponents', JSON.stringify(updatedComponents));
   };
 
-  const handlePeripheralToggle = (id) => {
-    setSelectedPeripherals(prev => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
+  const handleRemovePeripheral = (id, event) => {
+    event.stopPropagation();
+    
+    const updatedPeripherals = { ...selectedPeripherals };
+    updatedPeripherals[id] = null;
+    setSelectedPeripherals(updatedPeripherals);
+    
+    localStorage.setItem('selectedPeripherals', JSON.stringify(updatedPeripherals));
   };
 
   const selectedCount = Object.values(selectedComponents).filter(item => item !== null).length;
   const totalComponents = systemComponents.length;
 
-  const totalPrice = Object.values(selectedComponents).reduce((sum, component) => {
+  const componentsPrice = Object.values(selectedComponents).reduce((sum, component) => {
     if (component && component.price) {
       return sum + component.price;
     }
     return sum;
   }, 0);
 
+  const peripheralsPrice = Object.values(selectedPeripherals).reduce((sum, peripheral) => {
+    if (peripheral && peripheral.price) {
+      return sum + peripheral.price;
+    }
+    return sum;
+  }, 0);
+
+  const totalPrice = componentsPrice + peripheralsPrice;
+
   const progressPercent = (selectedCount / totalComponents) * 100;
 
-  const hasAnySelected = selectedCount > 0;
+  const hasAnySelected = selectedCount > 0 || Object.values(selectedPeripherals).some(p => p !== null);
 
   return (
     <div className='full'>
@@ -191,6 +216,41 @@ function Configurator() {
               ></span>
               <span className='Complete-text'>{selectedCount}/{totalComponents}</span>
             </div>
+
+         
+            <div className='peripherals-section'>
+              <h3 className='peripherals-title'>Периферия</h3>
+              <div className='peripherals-grid'>
+                {peripherals.map(peripheral => {
+                  const selected = selectedPeripherals[peripheral.id];
+                  return (
+                    <div 
+                      key={peripheral.id}
+                      className='peripheral-item'
+                      onClick={() => handlePeripheralClick(peripheral.id)}
+                    >
+                      {selected ? (
+                        <div className='peripheral-selected'>
+                          <img src={selected.image} alt={selected.name} className='peripheral-image' />
+                          <button 
+                            className='peripheral-remove-btn'
+                            onClick={(e) => handleRemovePeripheral(peripheral.id, e)}
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      ) : (
+                        <>
+                          <div className='peripheral-add-btn'>+</div>
+                          <span className='peripheral-name'>{peripheral.name}</span>
+                        </>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
             <div className='all-price'>
               <span 
                 className='active-price'

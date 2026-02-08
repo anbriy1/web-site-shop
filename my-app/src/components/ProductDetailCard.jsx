@@ -41,14 +41,14 @@ export default function ProductDetailCard({
             </div>
           ))}
           {specLinks && (
-            <Link to={`/specifications/${item.id}`} className='show-all-specs'>Все характеристики →</Link>
+            <Link to={`/specifications/${item.id}`} className='show-all-specs'>All specifications →</Link>
           )}
         </div>
 
         <div className='product-bottom-section'>
           {item.review && (
             <div className='popular-review-card'>
-              <h3 className='popular-review-title'>Популярный отзыв</h3>
+              <h3 className='popular-review-title'>Popular review</h3>
               <div className='review-header'>
                 <div className='review-avatar'></div>
                 <div className='review-meta'>
@@ -60,9 +60,9 @@ export default function ProductDetailCard({
                 </div>
               </div>
               <div className='review-content-block'>
-                <h4 className='review-subtitle'>Достоинства</h4>
+                <h4 className='review-subtitle'>Pros</h4>
                 <p className='review-text'>{item.review.advantages}</p>
-                <button className='review-expand-btn'>развернуть ▸</button>
+                <button className='review-expand-btn'>expand ▸</button>
               </div>
             </div>
           )}
@@ -70,19 +70,19 @@ export default function ProductDetailCard({
           <div className='product-detail-price-block'>
             <div className='product-price-row'>
               {item.oldPrice && (
-                <span className='product-old-price'>{item.oldPrice.toLocaleString('ru-RU')} ₽</span>
+                <span className='product-old-price'>{item.oldPrice.toLocaleString('en-US')} INR</span>
               )}
               {item.discount && (
                 <span className='product-discount-badge'>{item.discount}</span>
               )}
-              <span className='product-new-price'>{item.price.toLocaleString('ru-RU')} ₽</span>
+              <span className='product-new-price'>{item.price.toLocaleString('en-US')} INR</span>
             </div>
             {onAddToCart && (
-              <button className='buy-button' onClick={() => onAddToCart(item)}>В корзину</button>
+              <button className='buy-button' onClick={() => onAddToCart(item)}>Add to cart</button>
             )}
             <div className='product-actions'>
-              <button className='compare-btn'>сравнить</button>
-              <button className='favorite-btn'>в избранное</button>
+              <button className='compare-btn'>compare</button>
+              <button className='favorite-btn'>add to favorites</button>
             </div>
           </div>
         </div>

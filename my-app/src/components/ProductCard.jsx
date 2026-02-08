@@ -6,8 +6,8 @@ function ProductCard({ product, onClick, asLink = true }) {
       <img src={product.image} alt={product.name} />
       <h3 className='product-name'>{product.name}</h3>
       <div className='price-info'>
-        {product.oldPrice && <span className='old-price'>{product.oldPrice.toLocaleString('ru-RU')} ₽</span>}
-        <span className='new-price'>{product.price.toLocaleString('ru-RU')}₽</span>
+        {product.oldPrice && <span className='old-price'>{product.oldPrice.toLocaleString('en-US')} INR</span>}
+        <span className='new-price'>{product.price.toLocaleString('en-US')}INR</span>
         {product.discount && <span className='discount'>{product.discount}</span>}
       </div>
     </>

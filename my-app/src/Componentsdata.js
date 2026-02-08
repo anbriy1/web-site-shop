@@ -5,8 +5,8 @@ export const componentsData = {
       name: 'Intel Core i9-13900K', 
       price: 45000, 
       image: 'https://c.dns-shop.ru/thumb/st4/fit/320/250/71dc70270fae33c02f72276ab4995410/66e4986f12ca85239f674009ee5bacf714e92c3510d948945d966f14dabf1000.jpg',
-      specs: '24 ядра, 5.8 ГГц',
-      description: 'Intel Core i9-13900K 24 ядра (8P + 16E), до 5.8 ГГц, L3 36 МБ, сокет LGA1700',
+      specs: '24 core, 5.8 GHz',
+      description: 'Intel Core i9-13900K 24 core (8P + 16E), up to 5.8 GHz, L3 36 MB, LGA1700 socket',
       rating: 5,
       reviews: 58
     },
@@ -15,8 +15,8 @@ export const componentsData = {
       name: 'AMD Ryzen 9 7950X', 
       price: 48000, 
       image: 'https://c.dns-shop.ru/thumb/st1/fit/320/250/076feade9cec44b49a619dad24308be3/8650f24d3ba4df75e3f378043372178fa62fa5db5915fc7ac2d836192c9dffcb.jpg',
-      specs: '16 ядер, 5.7 ГГц',
-      description: 'AMD Ryzen 9 7950X 16 ядер, до 5.7 ГГц, L3 64 МБ, сокет AM5',
+      specs: '16 cores, 5.7 GHz',
+      description: 'AMD Ryzen 9 7950X 16 cores, up to 5.7 GHz, 64 MB L3, socket AM5',
       rating: 5,
       reviews: 58
     },
@@ -25,8 +25,8 @@ export const componentsData = {
       name: 'Intel Core i7-13700K', 
       price: 35000, 
       image: 'https://c.dns-shop.ru/thumb/st4/fit/320/250/e04c57f7734afd87b7b9ff0e48a78700/d4c5ac285e704d29542c41df4dd58bfdbea2e26bf597cce45714c6285b2985f4.jpg',
-      specs: '16 ядер, 5.4 ГГц',
-      description: 'Intel Core i7-13700K 16 ядер (8P + 8E), до 5.4 ГГц, L3 30 МБ, сокет LGA1700',
+      specs: '16 cores, 5.4 GHz',
+      description: 'Intel Core i7-13700K 16 cores (8P + 8E), up to 5.4 GHz, L3 30 MB, LGA1700 socket',
       rating: 5,
       reviews: 58
     },
@@ -35,8 +35,8 @@ export const componentsData = {
       name: 'AMD Ryzen 7 7800X3D', 
       price: 38000, 
       image: 'https://c.dns-shop.ru/thumb/st4/fit/500/500/bbd34c68dedfd816f74f2e1c8982ee28/a456db21c4184e22b75ccb0c07c70c520aacaa20efed5a50da6e0c6c3d17c2d7.jpg.webp',
-      specs: '8 ядер, 5.0 ГГц, 3D V-Cache',
-      description: 'AMD Ryzen 7 7800X3D 8 ядер, до 5.0 ГГц, 3D V-Cache 96 МБ, сокет AM5',
+      specs: '8-core, 5.0 GHz, 3D V-Cache',
+      description: 'AMD Ryzen 7 7800X3D 8-core, up to 5.0 GHz, 96 MB 3D V-Cache, AM5 socket',
       rating: 5,
       reviews: 58
     }
@@ -48,7 +48,7 @@ export const componentsData = {
       price: 32000, 
       image: 'https://c.dns-shop.ru/thumb/st1/fit/320/250/c6e68c950f1b8be932dd0da3b13aa264/375177002f20f941889f429251d5141528f52adb676721a558a4181cd98adf2d.jpg',
       specs: 'LGA1700, DDR5',
-      description: 'Материнская плата ASUS ROG STRIX Z790-E GAMING WIFI [LGA1700, DDR5, PCIe 5.0]',
+      description: 'Motherboard ASUS ROG STRIX Z790-E GAMING WIFI [LGA1700, DDR5, PCIe 5.0]',
       rating: 5,
       reviews: 42
     },
@@ -58,7 +58,7 @@ export const componentsData = {
       price: 35000, 
       image: 'https://c.dns-shop.ru/thumb/st4/fit/320/250/edd7c542283ef7ceb070c335441b762f/de582a642804d9593c779dec0755f31b92365069831db221d956b521abd2088f.jpg',
       specs: 'AM5, DDR5',
-      description: 'Материнская плата MSI MPG X670E CARBON WIFI [AM5, DDR5, PCIe 5.0]',
+      description: 'Motherboard MSI MPG X670E CARBON WIFI [AM5, DDR5, PCIe 5.0]',
       rating: 5,
       reviews: 38
     },
@@ -68,7 +68,7 @@ export const componentsData = {
       price: 28000, 
       image: 'https://c.dns-shop.ru/thumb/st4/fit/320/250/57bd5bfc8bad53e913b3d2d848f1bec3/9c93d2115e55871721eb11d5eb8b569bfc48721aaf45b7d9abd86310ddcded61.png',
       specs: 'LGA1700, DDR5',
-      description: 'Материнская плата Gigabyte Z790 AORUS ELITE AX [LGA1700, DDR5]',
+      description: 'Motherboard Gigabyte Z790 AORUS ELITE AX [LGA1700, DDR5]',
       rating: 4,
       reviews: 35
     },
@@ -78,7 +78,7 @@ export const componentsData = {
       price: 30000,
       image: 'https://c.dns-shop.ru/thumb/st1/fit/500/500/a52f8b72eb8fe59e5c2adc9298dc8088/59cc7658de5e8a7801d7aca3cb695de38515a14343f9b023fc3477d9c2724e43.png.webp',
       specs: 'AM5, DDR5',
-      description: 'Материнская плата ASRock X670E Steel Legend [AM5, DDR5, PCIe 5.0]',
+      description: 'Motherboard ASRock X670E Steel Legend [AM5, DDR5, PCIe 5.0]',
       rating: 4,
       reviews: 29
     }
@@ -548,17 +548,17 @@ export const componentsData = {
 };
 
 export const componentTitles = {
-  processor: 'процессора',
-  motherboard: 'материнской платы',
-  gpu: 'видеокарты',
-  ram: 'оперативной памяти',
-  case: 'корпуса',
-  storage: 'накопителя',
-  psu: 'блока питания',
-  monitor: 'монитора',
-  keyboard: 'клавиатуры',
-  mouse: 'мыши',
-  headphones: 'наушников',
-  microphone: 'микрофона',
-  mousepad: 'коврика'
+  processor: 'processor',
+  motherboard: 'motherboard',
+  gpu: 'graphics card',
+  ram: 'RAM',
+  case: 'case',
+  storage: 'storage',
+  psu: 'power supply',
+  monitor: 'monitor',
+  keyboard: 'keyboard',
+  mouse: 'mouse',
+  headphones: 'headphones',
+  microphone: 'microphone',
+  mousepad: 'mousepad'
 };

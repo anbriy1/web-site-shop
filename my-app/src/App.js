@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home.js';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Catalog from './pages/Catalog.js';
 import ProductPage from './pages/ProductPage.js';
 import SpecificationsPage from './pages/SpecificationsPage.jsx';
@@ -14,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/catalog" replace />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/specifications/:id" element={<SpecificationsPage />} />

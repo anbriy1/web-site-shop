@@ -24,25 +24,25 @@ function Header() {
           to="/catalog" 
           className={isActive('/catalog') || isActive('/product') ? 'nav-btn active' : 'nav-btn'}
         >
-          каталог
+          catalog
         </Link>
         <Link 
           to="/components" 
           className={isActive('/components') ? 'nav-btn active' : 'nav-btn'}
         >
-          комплектующие
+          components
         </Link>
         <Link 
           to="/builds" 
           className={isActive('/builds') ? 'nav-btn active' : 'nav-btn'}
         >
-          готовые сборки
+          ready builds
         </Link>
         <Link 
           to="/configurator" 
           className={isActive('/configurator') ? 'nav-btn active' : 'nav-btn'}
         >
-          конфигуратор
+          configurator
         </Link>
       </nav>
     </header>

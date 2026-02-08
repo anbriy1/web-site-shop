@@ -6,11 +6,9 @@ import { componentsData, componentTitles } from '../Componentsdata';
 function ComponentSelect() {
   const { componentType } = useParams();
   const navigate = useNavigate();
-  
-  const [selectedItem, setSelectedItem] = useState(null);
 
   const components = componentsData[componentType] || [];
-  const title = componentTitles[componentType] || 'компонента';
+  const title = componentTitles[componentType] || 'component';
 
   const isPeripheral = ['monitor', 'keyboard', 'mouse', 'headphones', 'microphone', 'mousepad'].includes(componentType);
 
@@ -47,7 +45,7 @@ function ComponentSelect() {
       <main className='component-select-page'>
         <div className='select-container'>
           <div className='select-header'>
-            <h1 className='select-title'>Выбор {title}</h1>
+            <h1 className='select-title'>Select {title}</h1>
             <button className='close-button' onClick={handleBack}>✕</button>
           </div>
 
@@ -66,7 +64,7 @@ function ComponentSelect() {
                       <div className='product-specs'>{component.specs}</div>
                       <div className='product-description'>{component.description}</div>
                     </div>
-                    <button className='compare-btn'>сравнить</button>
+                    <button className='compare-btn'>compare</button>
                     <div className='product-rating-select'>
                       {renderStars(component.rating)}
                       <span className='reviews-count'>{component.reviews}</span>
@@ -75,9 +73,9 @@ function ComponentSelect() {
                 </div>
 
                 <div className='product-right'>
-                  <div className='product-price-select'>{component.price.toLocaleString('ru-RU')}₽</div>
+                  <div className='product-price-select'>{component.price.toLocaleString('en-US')} INR</div>
                   <button className='select-button' onClick={() => handleSelect(component)}>
-                    Выбрать
+                    Select
                   </button>
                 </div>
               </div>

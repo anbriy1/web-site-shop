@@ -21,7 +21,7 @@ function Catalog() {
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    alert('Товар добавлен в корзину!');
+    alert('Product added to cart!');
   };
 
   const handleSaleClick = (product, e) => {

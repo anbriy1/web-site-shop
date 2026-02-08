@@ -56,24 +56,19 @@ function Cart() {
     return cart.reduce((sum, product) => sum + product.quantity, 0);
   };
 
-  const clearCart = () => {
-    localStorage.setItem('cart', JSON.stringify([]));
-    loadCart();
-  };
-
   return (
     <div className='full'>
       <Header />
       <div className='cart-page'>
         <div className='cart-header-section'>
           <button className='cart-back-btn' onClick={() => navigate(-1)}>←</button>
-          <h1 className='cart-title'>Корзина</h1>
+          <h1 className='cart-title'>Cart</h1>
         </div>
 
         {cart.length === 0 ? (
           <div className='empty-cart'>
-            <p className='empty-cart1'>Корзина пуста</p>
-            <p>Посмотрите предложения на главной странице, воспользуйтесь каталогом или поиском</p>
+            <p className='empty-cart1'>Your cart is empty</p>
+            <p>Check out offers on the main page, browse the catalog or use search</p>
           </div>
         ) : (
           <>
@@ -85,13 +80,13 @@ function Cart() {
                   <div className='cart-item-info'>
                     <h3>{product.name}</h3>
                     <div className='cart-item-actions'>
-                      <button className='cart-item-favorite'>в избранное</button>
+                      <button className='cart-item-favorite'>add to favorites</button>
                       <button className='cart-item-delete' onClick={() => {
                         const savedCart = JSON.parse(localStorage.getItem('cart') || '[]');
                         const filtered = savedCart.filter(item => item.id !== product.id);
                         localStorage.setItem('cart', JSON.stringify(filtered));
                         loadCart();
-                      }}>удалить</button>
+                      }}>remove</button>
                     </div>
                   </div>
 
@@ -112,9 +107,9 @@ function Cart() {
                   </div>
 
                   <div className='cart-item-price-section'>
-                    <div className='cart-item-price'>{product.price.toLocaleString('ru-RU')}₽</div>
-                    <div className='cart-item-availability'>в наличии</div>
-                    <div className='cart-item-stores'>в 3 магазинах</div>
+                    <div className='cart-item-price'>{product.price.toLocaleString('en-US')}INR</div>
+                    <div className='cart-item-availability'>in stock</div>
+                    <div className='cart-item-stores'>in 3 stores</div>
                   </div>
                 </div>
               ))}
@@ -122,16 +117,16 @@ function Cart() {
 
             <div className='cart-summary'>
               <div className='cart-summary-row'>
-                <span className='cart-summary-label'>ИТОГО:</span>
-                <span className='cart-summary-items'>{getTotalItems()} товар</span>
-                <span className='cart-summary-price'>{getTotalPrice().toLocaleString('ru-RU')}₽</span>
+                <span className='cart-summary-label'>TOTAL:</span>
+                <span className='cart-summary-items'>{getTotalItems()} item(s)</span>
+                <span className='cart-summary-price'>{getTotalPrice().toLocaleString('en-US')}INR</span>
               </div>
-              <button className='checkout-btn'>перейти к оформлению</button>
+              <button className='checkout-btn'>Proceed to checkout</button>
             </div>
           </>
         )}
       </div>
-     
+      <Footer />
     </div>
   );
 }

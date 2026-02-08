@@ -36,7 +36,7 @@ function Configurator() {
         const parsed = JSON.parse(savedComponents);
         setSelectedComponents(parsed);
       } catch (e) {
-        console.error('Ошибка загрузки компонентов:', e);
+        console.error('Error loading components:', e);
       }
     }
 
@@ -46,7 +46,7 @@ function Configurator() {
         const parsed = JSON.parse(savedPeripherals);
         setSelectedPeripherals(parsed);
       } catch (e) {
-        console.error('Ошибка загрузки периферии:', e);
+        console.error('Error loading peripherals:', e);
       }
     }
   };
@@ -76,22 +76,22 @@ function Configurator() {
   }, []);
 
   const systemComponents = [
-    { id: 'processor', name: 'Процессор' },
-    { id: 'motherboard', name: 'Материнская плата' },
-    { id: 'gpu', name: 'Видеокарта' },
-    { id: 'ram', name: 'Оперативная память' },
-    { id: 'case', name: 'Корпус' },
-    { id: 'storage', name: 'Хранение данных' },
-    { id: 'psu', name: 'Блок питания' }
+    { id: 'processor', name: 'Processor' },
+    { id: 'motherboard', name: 'Motherboard' },
+    { id: 'gpu', name: 'Graphics Card' },
+    { id: 'ram', name: 'RAM' },
+    { id: 'case', name: 'Case' },
+    { id: 'storage', name: 'Storage' },
+    { id: 'psu', name: 'Power Supply' }
   ];
 
   const peripherals = [
-    { id: 'monitor', name: 'Монитор' },
-    { id: 'keyboard', name: 'Клавиатура' },
-    { id: 'mouse', name: 'Мышь' },
-    { id: 'headphones', name: 'Наушники' },
-    { id: 'microphone', name: 'Микрофон' },
-    { id: 'mousepad', name: 'Коврик' }
+    { id: 'monitor', name: 'Monitor' },
+    { id: 'keyboard', name: 'Keyboard' },
+    { id: 'mouse', name: 'Mouse' },
+    { id: 'headphones', name: 'Headphones' },
+    { id: 'microphone', name: 'Microphone' },
+    { id: 'mousepad', name: 'Mousepad' }
   ];
 
   const iconImages = [bliz, puzzel, cards_g, mem];
@@ -154,7 +154,7 @@ function Configurator() {
         <div className='configurator-container'>
           
           <div className='system-block'>
-            <h2 className='block-title'>Системный блок</h2>
+            <h2 className='block-title'>System Unit</h2>
             <div className='components-list'>
               {systemComponents.map(component => {
                 const selected = selectedComponents[component.id];
@@ -170,13 +170,13 @@ function Configurator() {
                         <div className='component-info'>
                           <span className='component-name-small'>{component.name}</span>
                           <span className='component-model'>{selected.name}</span>
-                          <span className='component-price'>{selected.price}₽</span>
+                          <span className='component-price'>{selected.price}INR</span>
                         </div>
                         <button 
                           className='component-remove-btn'
                           onClick={(e) => handleRemoveComponent(component.id, e)}
                         >
-                          убрать
+                          remove
                         </button>
                       </div>
                     ) : (
@@ -201,7 +201,7 @@ function Configurator() {
 
           <div className='info-block'>
             <div className='text-up'>
-              <span className='text-uper'>Обязательных комплектующих</span>
+              <span className='text-uper'>Required components</span>
             </div>
             <div className='Complete'>
               <span 
@@ -219,7 +219,7 @@ function Configurator() {
 
          
             <div className='peripherals-section'>
-              <h3 className='peripherals-title'>Периферия</h3>
+              <h3 className='peripherals-title'>Peripherals</h3>
               <div className='peripherals-grid'>
                 {peripherals.map(peripheral => {
                   const selected = selectedPeripherals[peripheral.id];
@@ -259,8 +259,8 @@ function Configurator() {
                   transition: 'background-color 0.3s ease'
                 }}
               ></span>
-              <span className='full-price'>{totalPrice.toLocaleString('ru-RU')}₽</span>
-              <span className='active-select'>сборка</span>
+              <span className='full-price'>{totalPrice.toLocaleString('en-US')}INR</span>
+              <span className='active-select'>build</span>
             </div>
 
             <div 
@@ -271,7 +271,7 @@ function Configurator() {
                 transition: 'background-color 0.3s ease'
               }}
             >
-              <span className='buy-text'>Купить</span>
+              <span className='buy-text'>Buy</span>
             </div>
           </div>
           

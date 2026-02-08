@@ -6,13 +6,13 @@ function Footer(){
         <footer className='footer-shop'>
         <div className='footer-text'>
             <p>©PCTRAXERS</p>
-            <p>Политика конфиденциальности</p>
+            <p>Privacy Policy</p>
         </div>
 
         <div className='footer-image'>
          <img src={images.visa} alt="Visa" />
          <img src={images.mastercard} alt="Mastercard" />
-         <img src={images.myr} alt="МИР" />
+         <img src={images.myr} alt="Mir" />
         </div>
         </footer>
     )

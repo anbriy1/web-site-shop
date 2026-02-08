@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../Product';
 import Header from '../components/Header';
@@ -24,8 +23,8 @@ function ProductPage() {
       <div className='full'>
         <Header />
         <main className='product-not-found'>
-          <h1>Продукт не найден</h1>
-          <Link to="/catalog" className='back-link'>⇦ Назад</Link>
+          <h1>Product not found</h1>
+          <Link to="/catalog" className='back-link'>⇦ Back</Link>
         </main>
         <Footer />
       </div>
@@ -36,7 +35,7 @@ function ProductPage() {
     <div className='full'>
       <Header />
       <main className='product-detail-page'>
-        <Link to="/catalog" className='back-link'>⇦ назад</Link>
+        <Link to="/catalog" className='back-link'>⇦ Back</Link>
 
         <div className='product-detail-container'>
           <div className='product-detail-left'>
@@ -61,7 +60,7 @@ function ProductPage() {
 
             <div className='product-rating'>
               <span className='rating-stars'>★ {product.rating || '3.0'}</span>
-              <span className='rating-count'>{product.reviews || '2 отзыва'}</span>
+              <span className='rating-count'>{product.reviews || '2 reviews'}</span>
             </div>
 
             <div className='product-short-specs'>
@@ -70,13 +69,13 @@ function ProductPage() {
                   <strong>{getSpecName(key)}:</strong> {value};
                 </div>
               ))}
-              <Link to={`/specifications/${id}`} className='show-all-specs'>Все характеристики →</Link>
+              <Link to={`/specifications/${id}`} className='show-all-specs'>All specifications →</Link>
             </div>
 
             <div className='product-bottom-section'>
               {product.review && (
                 <div className='popular-review-card'>
-                  <h3 className='popular-review-title'>Популярный отзыв</h3>
+                  <h3 className='popular-review-title'>Popular review</h3>
                   <div className='review-header'>
                     <div className='review-avatar'></div>
                     <div className='review-meta'>
@@ -88,9 +87,9 @@ function ProductPage() {
                     </div>
                   </div>
                   <div className='review-content-block'>
-                    <h4 className='review-subtitle'>Достоинства</h4>
+                    <h4 className='review-subtitle'>Pros</h4>
                     <p className='review-text'>{product.review.advantages}</p>
-                    <button className='review-expand-btn'>развернуть ▸</button>
+                    <button className='review-expand-btn'>expand ▸</button>
                   </div>
                 </div>
               )}
@@ -98,17 +97,17 @@ function ProductPage() {
               <div className='product-detail-price-block'>
                 <div className='product-price-row'>
                   {product.oldPrice && (
-                    <span className='product-old-price'>{product.oldPrice.toLocaleString('ru-RU')} ₽</span>
+                    <span className='product-old-price'>{product.oldPrice.toLocaleString('en-US')} INR</span>
                   )}
                   {product.discount && (
                     <span className='product-discount-badge'>{product.discount}</span>
                   )}
-                  <span className='product-new-price'>{product.price.toLocaleString('ru-RU')} ₽</span>
+                  <span className='product-new-price'>{product.price.toLocaleString('en-US')} INR</span>
                 </div>
-                <button className='buy-button' onClick={addToCart}>В корзину</button>
+                <button className='buy-button' onClick={addToCart}>Add to cart</button>
                 <div className='product-actions'>
-                  <button className='compare-btn'>сравнить</button>
-                  <button className='favorite-btn'>в избранное</button>
+                  <button className='compare-btn'>compare</button>
+                  <button className='favorite-btn'>add to favorites</button>
                 </div>
               </div>
             </div>

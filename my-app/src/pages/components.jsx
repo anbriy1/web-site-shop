@@ -25,7 +25,7 @@ function Components() {
               item={component}
               specLinks
               rating="4.5"
-              reviews="12 отзывов"
+              reviews="12 reviews"
               onAddToCart={addToCart}
             />
           </div>

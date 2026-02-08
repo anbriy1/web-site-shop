@@ -25,7 +25,7 @@ function Builds() {
               item={build}
               specLinks
               rating="4.8"
-              reviews="25 отзывов"
+              reviews="25 reviews"
               onAddToCart={addToCart}
             />
           </div>

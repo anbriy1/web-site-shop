@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ComponentSelect.css';
 import { componentsData, componentTitles } from '../Componentsdata';
